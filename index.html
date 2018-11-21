@@ -1,0 +1,452 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+<body>
+<div id="cartoon">
+	<div id="turkey">
+		<div id="head">
+			<div id="right_eye" class="eye">
+				<div class="pupil"></div>
+			</div>
+			<div id="left_eye" class="eye">
+				<div class="pupil"></div>
+			</div>
+			<div id="beak"></div>
+			<div id="gobbler"></div>
+		</div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div id="body"></div>
+		<div id="right_thigh" class="thighs"></div>
+		<div id="left_thigh" class="thighs"></div>
+		<div id="right_shin" class="shins"></div>
+		<div id="left_shin" class="shins"></div>
+	</div>
+	<div id="right_foot" class="feet"></div>
+	<div id="left_foot" class="feet"></div>
+</div>
+<style>
+	#cartoon {
+		position: relative;
+		transform: scale(.5);
+	}
+	#turkey {
+		position: absolute;
+		left: 370px;
+		top: 320px;
+	}
+	#head {
+		position: absolute;
+		height: 350px;
+		width: 350px;
+		z-index: 1;
+		border: 3px solid black;
+		background-color:#732000;
+		border-radius: 50%;
+		box-shadow:inset -55px 0 4px 5px #4E1D01;
+		animation-name: headTurn;
+		animation-duration: 10s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes headTurn {
+		0%   {transform:rotate(0deg);}
+		24%  {transform:rotate(0deg);}
+		25%	 {transform:rotate(45deg);}
+		49%	 {transform:rotate(45deg);}
+		50%	 {transform:rotate(0deg);}
+		74%  {transform:rotate(0deg);}
+		75%  {transform:rotate(-45deg);}
+		99%  {transform:rotate(-45deg);}
+		100% {transform:rotate(0deg);}
+	}
+	.eye {
+		position: absolute;
+		height: 90px;
+		width: 90px;
+		z-index: 1;
+		border: 3px solid black;
+		border-radius: 50%;
+		background-color: #fff;
+		top: 80px;
+	}
+	#left_eye {
+		left: 70px;
+		animation-name: eyeSpin;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear; 
+	}
+	#right_eye {
+		left: 180px;
+		animation-name: eyeSpin;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+	.pupil {
+		height: 25px;
+		width: 25px;
+		background-color: #000;
+		border-radius: 50%;
+		margin-top: 30px;
+		margin-left: 0px;
+	}
+	@keyframes eyeSpin {
+		0%   {transform:rotate(0deg);}
+		100% {transform:rotate(360deg);}
+	}
+	#beak {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 50px solid transparent;
+		border-right: 50px solid transparent;
+		border-top: 160px solid orange;
+		border-radius: 50%;
+		z-index: 3;
+		top: 170px;
+		left: 125px;
+	}
+	#gobbler {
+		position: absolute;
+		height: 100px;
+		width: 60px;
+		background-color: red;
+		border-radius: 0 100% 50% 80%;
+		top: 200px;
+		left: 210px;
+		transform: rotate(-15deg);
+	}
+	.feather {
+		position: absolute;
+		width: 600px;
+		height: 70px;
+		border: 3px solid black;
+		background-color: orange;
+		background-image: linear-gradient(to right, yellow, red, brown);
+		border-radius: 500% 200% 200% 500%;
+		z-index: -5
+	}
+	.feather:nth-of-type(2) {
+		transform: rotate(-15deg);
+		left: -350px;
+		top: 500px;
+		animation-name: featherSpin1;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin1 {
+		0%   {transform: rotate(-15deg);}
+		2.5%   {transform: rotate(-15deg);}
+		100% {transform: rotate(345deg);}
+	}
+	.feather:nth-of-type(3) {
+		transform: rotate(-5deg);
+		left: -370px;
+    	top: 410px;
+		animation-name: featherSpin2;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin2 {
+		0%   {transform: rotate(-5deg);}
+		5%   {transform: rotate(-5deg);}
+		100% {transform: rotate(355deg);}
+	}
+	.feather:nth-of-type(4) {
+		transform: rotate(5deg);
+		left: -370px;
+    	top: 320px;
+		animation-name: featherSpin3;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin3 {
+		0%   {transform: rotate(5deg);}
+		7.5%  {transform: rotate(5deg);}
+		100% {transform: rotate(365deg);}
+	}
+	.feather:nth-of-type(5) {
+		transform: rotate(15deg);
+		left: -370px;
+    	top: 230px;
+		animation-name: featherSpin4;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin4 {
+		0%   {transform: rotate(15deg);}
+		10%  {transform: rotate(15deg);}
+		100% {transform: rotate(380deg);}
+	}
+	.feather:nth-of-type(6) {
+		transform: rotate(30deg);
+		left: -340px;
+   		top: 135px;
+		animation-name: featherSpin5;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin5 {
+		0%   {transform: rotate(30deg);}
+		12.5%  {transform: rotate(30deg);}
+		100% {transform: rotate(390deg);}
+	}
+	.feather:nth-of-type(7) {
+		transform: rotate(45deg);
+		left: -268px;
+    	top: 85px;
+		animation-name: featherSpin6;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin6 {
+		0%   {transform: rotate(45deg);}
+		15%  {transform: rotate(45deg);}
+		100% {transform: rotate(405deg);}
+	}
+	.feather:nth-of-type(8) {
+		transform: rotate(70deg);
+		left: -195px;
+    	top: 35px;
+		animation-name: featherSpin7;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin7 {
+		0%   {transform: rotate(70deg);}
+		17.5%  {transform: rotate(70deg);}
+		100% {transform: rotate(430deg);}
+	}
+	.feather:nth-of-type(9) {
+		transform: rotate(85deg);
+		left: -125px;
+    	top: 15px;
+		animation-name: featherSpin8;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin8 {
+		0%   {transform: rotate(85deg);}
+		20%  {transform: rotate(85deg);}
+		100% {transform: rotate(445deg);}
+	}
+	.feather:nth-of-type(10) {
+		transform: rotate(100deg);
+		left: -40px;
+    	top: 0px;
+		animation-name: featherSpin9;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin9 {
+		0%   {transform: rotate(100deg);}
+		22.5%  {transform: rotate(100deg);}
+		100% {transform: rotate(460deg);}
+	}
+	.feather:nth-of-type(11) {
+		transform: rotate(115deg);
+		left: 50px;
+    	top: 35px;
+		animation-name: featherSpin10;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin10 {
+		0%   {transform: rotate(115deg);}
+		25%  {transform: rotate(115deg);}
+		100% {transform: rotate(475deg);}
+	}
+	.feather:nth-of-type(12) {
+		transform: rotate(135deg);
+		left: 170px;
+    	top: 45px;
+		animation-name: featherSpin11;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin11 {
+		0%   {transform: rotate(135deg);}
+		27.5%  {transform: rotate(135deg);}
+		100% {transform: rotate(495deg);}
+	}
+	.feather:nth-of-type(13) {
+		transform: rotate(150deg);
+		left: 290px;
+    	top: 95px;
+		animation-name: featherSpin12;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin12 {
+		0%   {transform: rotate(150deg);}
+		30%  {transform: rotate(150deg);}
+		100% {transform: rotate(510deg);}
+	}
+	.feather:nth-of-type(14) {
+		transform: rotate(165deg);
+		left: 370px;
+    	top: 195px;
+		animation-name: featherSpin13;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin13 {
+		0%   {transform: rotate(165deg);}
+		32.5%  {transform: rotate(165deg);}
+		100% {transform: rotate(525deg);}
+	}
+	.feather:nth-of-type(15) {
+		transform: rotate(170deg);
+		left: 370px;
+    	top: 290px;
+		animation-name: featherSpin14;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin14 {
+		0%   {transform: rotate(170deg);}
+		35%  {transform: rotate(170deg);}
+		100% {transform: rotate(530deg);}
+	}
+	.feather:nth-of-type(16) {
+		transform: rotate(185deg);
+		left: 370px;
+    	top: 410px;
+		animation-name: featherSpin15;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin15 {
+		0%   {transform: rotate(185deg);}
+		37.5%  {transform: rotate(185deg);}
+		100% {transform: rotate(545deg);}
+	}
+	.feather:nth-of-type(17) {
+		transform: rotate(195deg);
+		left: 350px;
+		top: 510px;
+		animation-name: featherSpin16;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+    	animation-direction: alternate; 
+	}
+	@keyframes featherSpin16 {
+		0%   {transform: rotate(195deg);}
+		40%  {transform: rotate(195deg);}
+		100% {transform: rotate(555deg);}
+	}
+	.feather_line {
+		top: 32px;
+		position: absolute;
+		width: 530px;
+		left: 120px;
+		z-index: 10;
+		border: 3px solid black;
+		background-color: black;
+		border-radius: 50%;
+	}
+	#body {
+		position: absolute;
+		top: 100px;
+		height: 500px;
+		width: 500px;
+		border: 3px solid black;
+		background-color:#732000;
+		border-radius: 50%;
+		box-shadow:inset -55px 0 4px 5px #4E1D01;
+	}
+	.thighs {
+		position:absolute;
+		height: 200px;
+		width: 40px;
+		background-color: tan;
+		z-index: -1;
+		border-bottom-left-radius: 20px;
+    	border-bottom-right-radius: 20px;
+	}
+	#right_thigh {
+		top: 480px;
+		left: 350px;
+		transform: rotate(-45deg);
+	}
+	#left_thigh {
+		top: 480px;
+		left: 115px;
+		transform: rotate(45deg);
+	}
+	.shins {
+		position:absolute;
+		height: 200px;
+		width: 40px;
+		background-color: tan;
+		z-index: -2;
+		border-bottom-left-radius: 20px;
+    	border-bottom-right-radius: 20px;
+		border-top-left-radius: 20px;
+    	border-top-right-radius: 20px;
+	}
+	#right_shin {
+		top: 615px;
+		left: 385px;
+		transform: rotate(15deg);
+	}
+	#left_shin {
+		top: 615px;
+		left: 80px;
+		transform: rotate(-15deg);
+	}
+	.feet {
+		position:absolute;
+		top: 1040px;
+		height: 150px;
+		width: 40px;
+		background-color: tan;
+		z-index: -2;
+		border-bottom-left-radius: 20px;
+    	border-bottom-right-radius: 20px;
+		border-top-left-radius: 20px;
+    	border-top-right-radius: 20px;
+		transform: rotate(90deg);
+	}
+	#right_foot {
+		left: 790px;
+	}
+	#left_foot {
+		left: 415px;
+	}
+</style>
+</body>
+</html>
